@@ -46,16 +46,21 @@ class _MyHomePageState extends State<MyHomePage> {
           Icon(Icons.share),
         ]
       ),
-      body: Center(
-        child: Row(
-          children: <Widget>[
-            Text(
-              '説明！！',),
-            Text(
-              '説明！！',),
-            Text(
-              '説明！！',),
-          ],
+      body: Container(
+        height: double.infinity,
+        color: Colors.red,
+        child: Padding(
+          padding: const EdgeInsets.all(20.0),
+          child: Row(
+            children: <Widget>[
+              Text(
+                '説明！！',),
+              Text(
+                '説明！！',),
+              Text(
+                '説明！！',),
+            ],
+          ),
         ),
       ),
       floatingActionButton: FloatingActionButton(
