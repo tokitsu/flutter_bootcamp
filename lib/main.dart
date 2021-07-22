@@ -43,21 +43,28 @@ class _MyHomePageState extends State<MyHomePage> {
       appBar: AppBar(
         title: Text('flutter大学'),
       ),
-      body: Center(
-        child: ElevatedButton(
-          child: const Text('Button'),
-          style: ElevatedButton.styleFrom(
-            primary: Colors.orange,
-            onPrimary: Colors.white,
-          ),
-          onPressed: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => NextPage()
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Center(
+            child: ElevatedButton(
+              child: const Text('Button'),
+              style: ElevatedButton.styleFrom(
+                primary: Colors.orange,
+                onPrimary: Colors.white,
               ),
-            );
-          },
-        ),
+              onPressed: () async {
+                final result = await Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => NextPage('KBOY')
+                  ),
+                );
+                print(result);
+              },
+            ),
+          ),
+        ],
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: _incrementCounter,
