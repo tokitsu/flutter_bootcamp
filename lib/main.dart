@@ -46,23 +46,16 @@ class _MyHomePageState extends State<MyHomePage> {
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Center(
-            child: ElevatedButton(
-              child: const Text('Button'),
-              style: ElevatedButton.styleFrom(
-                primary: Colors.orange,
-                onPrimary: Colors.white,
-              ),
-              onPressed: () async {
-                final result = await Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                      builder: (context) => NextPage('KBOY')
-                  ),
-                );
-                print(result);
-              },
-            ),
+          Column(
+            children: [
+              Text(
+                'kBOYさん',
+                style: TextStyle(
+                  fontSize: 50,
+                  fontWeight: FontWeight.bold,
+                )
+              )
+            ],
           ),
         ],
       ),
