@@ -37,33 +37,37 @@ class _MyHomePageState extends State<MyHomePage> {
     });
   }
 
+  final myFocusNode = FocusNode();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: Text('flutter大学'),
       ),
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Column(
-            children: [
-              Text(
-                'kBOYさん',
-                style: TextStyle(
-                  fontSize: 50,
-                  fontWeight: FontWeight.bold,
-                )
-              )
-            ],
-          ),
-        ],
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: Icon(Icons.add),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
+      body: Container(
+        width: double.infinity,
+        child: Column(
+          children: [
+            TextField(
+              autofocus: true,
+            ),
+            TextField(
+              focusNode: myFocusNode,
+            ),
+            ElevatedButton(
+              child: const Text('Button'),
+              style: ElevatedButton.styleFrom(
+                primary: Colors.orange,
+                onPrimary: Colors.white,
+              ),
+              onPressed: () {
+                myFocusNode.requestFocus();
+              },
+            ),
+          ],
+        ),
+      )
     );
   }
 }
