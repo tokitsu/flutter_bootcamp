@@ -39,6 +39,8 @@ class _MyHomePageState extends State<MyHomePage> {
 
   final myFocusNode = FocusNode();
 
+  final items = List<String>.generate(10000, (i) => "Item $i");
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -47,27 +49,15 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       body: Container(
         width: double.infinity,
-        child: Column(
-          children: [
-            TextField(
-              autofocus: true,
-            ),
-            TextField(
-              focusNode: myFocusNode,
-            ),
-            ElevatedButton(
-              child: const Text('Button'),
-              style: ElevatedButton.styleFrom(
-                primary: Colors.orange,
-                onPrimary: Colors.white,
-              ),
-              onPressed: () {
-                myFocusNode.requestFocus();
-              },
-            ),
-          ],
+        child: ListView.builder(
+          itemCount: items.length,
+          itemBuilder: (context, index) {
+            return ListTile(
+              title: Text(items[index]),
+            );
+          },
         ),
-      )
+      ),
     );
   }
 }
