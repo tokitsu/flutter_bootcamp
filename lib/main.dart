@@ -45,17 +45,15 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('flutter大学'),
+        title: Text('コリアンダー'),
       ),
-      body: Container(
-        width: double.infinity,
-        child: ListView.builder(
-          itemCount: items.length,
-          itemBuilder: (context, index) {
-            return ListTile(
-              title: Text(items[index]),
-            );
-          },
+      body: Center(
+        child: Column(
+          children: [
+            Text(
+              'not kboys'
+            )
+          ],
         ),
       ),
     );
